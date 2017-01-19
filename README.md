@@ -1,8 +1,14 @@
-# markov-chain-comp
+#Markov Chain Algorithmic Compositions
 Using Markov Chains and MIDIUtil to generate MIDI files
 
 #Usage
-If data is to be later added, the data is read in the format X,# X,#.... where X can be 0-127 for midi notes, and 128-132 for rests of length 1/16, 1/8, 1/4, 1,2, 1. \# is the octave from 0-10 if X is a midi note, otherwise # represents the index of the array [1/4,1/2,1,2,4]
+If music data is ever to be added, the syntax is written as the 'X;O;L' for notes where X is one of 
+C,C\#,D,D\#,E,F,F\#,G,G\#,A,A\#,B, O is the octave of the midi note ranging from 0-10, and L specifies 
+the length of the note, ranging from 0-4, where the following array at index L is the length [0.25,0.5,1,2,4](1 is one beat). 
+The syntax for rests is 'R;L', where L is the length of the rest, following the same rules as the length
+variable of the note. The R distinguishes that the data entry is a rest. Spaces are used to seperate these
+elements.
 
-#Todo
-Add different length of midi notes
+
+#Libraries
+MIDIUtil: https://pypi.python.org/pypi/MIDIUtil/1.1.1
